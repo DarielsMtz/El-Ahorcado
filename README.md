@@ -2,7 +2,7 @@
 
 ¡Bienvenido a **El Ahorcado**! Un divertido juego web donde pondrás a prueba tu conocimiento y habilidades para adivinar palabras antes de que el personaje termine "ahorcado". Ideal para pasar el rato mientras te diviertes y aprendes.
 
----
+## ![Hecho con Astro](https://img.shields.io/badge/Hecho%20con-Astro-blue?style=flat-square&logo=astro&logoColor=white) ![Hecho con TailwindCSS](https://img.shields.io/badge/Hecho%20con-TailwindCSS-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white) ![Estado del proyecto](https://img.shields.io/badge/Estado-En%20proceso-yellow?style=flat-square)
 
 ## 🎮 Características
 
