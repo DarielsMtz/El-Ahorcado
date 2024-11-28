@@ -21,3 +21,35 @@ Este proyecto ha sido desarrollado con las siguientes tecnologías:
 - **CSS3 (TailwindCSS)**: Estilos modernos y personalizados para una mejor experiencia visual.
 - **JavaScript**: Para la lógica del juego y las interacciones dinámicas.
 - **GitHub**: Repositorio para el control de versiones y colaboración.
+
+---
+
+## 📦 Instalación y ejecución
+
+Para instalar y ejecutar el juego, sigue estos pasos:
+
+1. Clona el repositorio en tu computadora.
+2. Abre el archivo `index.html` en tu navegador web.
+3. Inicia el juego y comienza a adivinar palabras.
+
+---
+
+## 📝 Contribuciones
+
+Si deseas contribuir a este proyecto, puedes hacerlo de varias maneras:
+
+- Reportando errores o sugiriendo mejoras en la documentación.
+- Agregando nuevas funcionalidades o mejoras en la interfaz.
+- Traduciendo el juego a otros idiomas.
+- Ayudando a mejorar la estructura y el diseño del juego.
+- Realizando correcciones de errores o mejoras en el código.
+
+Recuerda que cualquier contribución es bienvenida y apreciada. ¡Gracias por colaborar!
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la licencia MIT. Puedes ver el archivo `LICENSE` para obtener más información sobre el uso y las restricciones de la licencia.
+
+---
