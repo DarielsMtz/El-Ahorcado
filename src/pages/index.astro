@@ -4,64 +4,59 @@ import { Image } from "astro:assets";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="max-w-3xl mx-auto">
+  <main class="max-w-3xl mx-auto py-8">
     <h1 class="text-3xl font-bold text-center mt-12 mb-20">
       Juego del Ahorcado
     </h1>
 
-    <section aria-labelledby="msg-final">
+    <section aria-labelledby="msg-final" class="blockm h-3 text-center py-3">
       <h2
         id="msg-final"
         class="text-center text-xl font-semibold text-gray-700">
       </h2>
-      <p id="acierto" class="text-center text-gray-600"></p>
+      <h4 id="acierto"></h4>
     </section>
 
     <section class="flex flex-col items-center mt-6">
       <h2 id="palabra" class="text-2xl font-bold tracking-widest mb-6"></h2>
+      <p id="hueco-pista" class="text-sm text-gray-600 mt-2 py-3 flex-shrink">
+      </p>
       <picture class="flex justify-center space-x-2">
         <img
           src="/img/ahorcado_6.png"
           alt="Imagen del ahorcado, etapa 6"
           id="image6"
-          class="hidden"
         />
 
         <img
           src="/img/ahorcado_5.png"
           alt="Imagen del ahorcado, etapa 5"
           id="image5"
-          class="hidden"
         />
         <img
           src="img/ahorcado_4.png"
           alt="Imagen del ahorcado, etapa 4"
           id="image4"
-          class="hidden"
         />
         <img
           src="img/ahorcado_3.png"
           alt="Imagen del ahorcado, etapa 3"
           id="image3"
-          class="hidden"
         />
         <img
           src="img/ahorcado_2.png"
           alt="Imagen del ahorcado, etapa 2"
           id="image2"
-          class="hidden"
         />
         <img
           src="img/ahorcado_1.png"
           alt="Imagen del ahorcado, etapa 1"
           id="image1"
-          class="hidden"
         />
         <img
           src="img/ahorcado_0.png"
           alt="Imagen del ahorcado, etapa 0"
           id="image0"
-          class="hidden"
         />
       </picture>
     </section>
@@ -87,13 +82,11 @@ import { Image } from "astro:assets";
           class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
           Dame una pista!
         </button>
-        <p id="hueco-pista" class="text-sm text-gray-600 mt-2 py-3 flex-shrink">
-        </p>
       </div>
     </section>
 
-    <section class="mt-6">
-      <div id="abcdario" class="grid grid-cols-8 gap-2 justify-center mb-6">
+    <section class="mt-6 p-1 border border-gray-200 rounded-lg">
+      <div id="abcdario" class="grid grid-cols-8 gap-2 justify-center p-3">
       </div>
     </section>
   </main>
@@ -106,12 +99,17 @@ import { Image } from "astro:assets";
     max-width: 800px;
     margin: auto;
   }
-
   h1.titulo {
     margin: 50px auto 80px auto;
     text-align: center;
+    font-family:
+      Cambria,
+      Cochin,
+      Georgia,
+      Times,
+      Times New Roman,
+      serif;
   }
-
   h1#msg-final {
     text-align: center;
     color: crimson;
@@ -120,47 +118,37 @@ import { Image } from "astro:assets";
     min-height: 50px;
     margin-bottom: 0;
   }
-
   .zoom-in {
     transform: scale(1) !important;
   }
-
   #acierto {
     text-align: center;
     min-height: 24px;
     transform: scale(0);
   }
-
   .acierto {
     animation: zoomInOut 1s ease;
   }
-
   .rojo {
     color: red;
   }
-
   .verde {
     color: green;
   }
-
   @keyframes zoomInOut {
     0% {
       transform: scale(0);
     }
-
     50% {
       transform: scale(1);
     }
-
     70% {
       transform: scale(1);
     }
-
     100% {
       transform: scale(0);
     }
   }
-
   h2.palabra {
     margin: 0 auto 25px auto;
     text-align: center;
@@ -168,46 +156,44 @@ import { Image } from "astro:assets";
     text-transform: uppercase;
     letter-spacing: 6px;
   }
-
   .flex-row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 10px auto;
   }
-
   .no-wrap {
     flex-wrap: nowrap !important;
   }
-
   .col {
     width: 50%;
     text-align: center;
   }
-
+  .col span {
+  }
   #turnos h3 {
     margin: auto;
   }
-
   h3 span {
     color: orangered;
+  }
+
+  .letra {
+    background-color: #a9a9a9;
   }
 
   .letra:disabled {
     color: rgba(255, 0, 0, 0.5);
   }
-
   picture {
     position: relative;
   }
-
   picture img {
     position: absolute;
     top: -203px;
     left: -205px;
     height: 225px;
   }
-
   #image5,
   #image4,
   #image3,
@@ -217,11 +203,9 @@ import { Image } from "astro:assets";
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-
   .fade-in {
     opacity: 1 !important;
   }
-
   .encuadre {
     border: 2px dashed crimson;
     padding: 3px 2px 2px 6px;

@@ -8,7 +8,6 @@ const palabras = [
   ["manzana", "Una fruta"],
   ["ajedrez", "Un juego de estrategia"],
   ["manglar", "Un ecosistema costero"],
-  ["k2", "Una montaña famosa"],
   ["trueno", "Sigue al relámpago"],
   ["camello", "Animal del desierto"],
   ["andorra", "Un país pequeño"],
@@ -25,7 +24,7 @@ const palabras = [
 let palabra = ""; // Palabra a adivinar
 let rand; // Número aleatorio
 let oculta = []; // Palabra oculta
-let cont = 6; // Contador de intentos
+let cont = 1; // Contador de intentos
 
 const hueco = document.getElementById("palabra"); // Div donde se escribe la palabra
 const btnInicio = document.getElementById("reset"); // Botón de inicio
@@ -65,7 +64,8 @@ function generaABC(a, z) {
 // Crear un botón de letra
 function crearBotonLetra(letra) {
   const button = document.createElement("button");
-  button.className = "px-4 py-2 bg- text-black bold rounded m-1";
+  button.className = "px-4 py-2 text-white bold rounded m-1";
+  button.style.backgroundColor = "#a9a9a9";
   button.textContent = letra;
   button.value = letra;
   button.onclick = () => intento(letra);
@@ -87,9 +87,9 @@ function intento(letra) {
   } else {
     cont--;
     intentosElement.textContent = cont;
-    document.getElementById(`image${cont}`).classList.add("fade-in");
-    document.getElementById(`image${cont}`).classList.remove("hidden");
-    document.getElementById(`image${cont}`).classList.add("block");
+    const imageElement = document.getElementById(`image${cont}`);
+    imageElement.classList.add("fade-in", "block");
+    imageElement.classList.remove("hidden");
 
     mostrarMensaje("Fallo!", "text-red-600");
   }
@@ -99,10 +99,11 @@ function intento(letra) {
 // Mostrar mensaje de acierto o fallo
 function mostrarMensaje(texto, clase) {
   aciertoMsg.textContent = texto;
-  aciertoMsg.className = `${clase} font-bold text-lg`;
+  aciertoMsg.className = `${clase} font-bold text-lg `;
+
   setTimeout(() => {
     aciertoMsg.textContent = "";
-  }, 800);
+  }, 1000);
 }
 
 // Obtener pista
@@ -124,6 +125,9 @@ function finalizarJuego(mensaje, ganado) {
   msgFinal.textContent = mensaje;
   msgFinal.className = "text-3xl font-bold mt-4";
   hueco.classList.add("encuadre");
+  ganado
+    ? (msgFinal.className += " text-green-600")
+    : (msgFinal.className += " text-red-600");
   deshabilitarBotones();
 
   btnInicio.textContent = "Reiniciar";
