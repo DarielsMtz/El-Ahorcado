@@ -24,7 +24,7 @@ const palabras = [
 let palabra = ""; // Palabra a adivinar
 let rand; // Número aleatorio
 let oculta = []; // Palabra oculta
-let cont = 1; // Contador de intentos
+let cont = 6; // Contador de intentos
 
 const hueco = document.getElementById("palabra"); // Div donde se escribe la palabra
 const btnInicio = document.getElementById("reset"); // Botón de inicio
@@ -103,7 +103,7 @@ function mostrarMensaje(texto, clase) {
 
   setTimeout(() => {
     aciertoMsg.textContent = "";
-  }, 1000);
+  }, 1500);
 }
 
 // Obtener pista
@@ -114,9 +114,9 @@ function pista() {
 // Comprobar si el juego ha finalizado
 function compruebaFin() {
   if (!oculta.includes("_")) {
-    finalizarJuego("Felicidades!!", true);
+    finalizarJuego("Felicidades, ¡Has ganado! :D", true);
   } else if (cont === 0) {
-    finalizarJuego("Game Over", false);
+    finalizarJuego("Game Over :(", false);
   }
 }
 

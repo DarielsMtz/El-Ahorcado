@@ -5,21 +5,23 @@ import { Image } from "astro:assets";
 
 <Layout title="Welcome to Astro.">
   <main class="max-w-3xl mx-auto py-8">
-    <h1 class="text-3xl font-bold text-center mt-12 mb-20">
+    <h1 class="text-6xl font-bold text-center mt-12 mb-3">
       Juego del Ahorcado
     </h1>
 
     <section aria-labelledby="msg-final" class="blockm h-3 text-center py-3">
       <h2
         id="msg-final"
-        class="text-center text-xl font-semibold text-gray-700">
+        class="text-center text-xl font-semibold text-gray-700 pb-3">
       </h2>
       <h4 id="acierto"></h4>
     </section>
 
-    <section class="flex flex-col items-center mt-6">
-      <h2 id="palabra" class="text-2xl font-bold tracking-widest mb-6"></h2>
-      <p id="hueco-pista" class="text-sm text-gray-600 mt-2 py-3 flex-shrink">
+    <section class="flex flex-col items-center mt-6 pt-3">
+      <h2 id="palabra" class="text-2xl font-bold tracking-widest mb-6 p-2"></h2>
+      <p
+        id="hueco-pista"
+        class="text-sm text-gray-600 mt-2 py-3 h-4 flex-shrink">
       </p>
       <picture class="flex justify-center space-x-2">
         <img
@@ -69,6 +71,8 @@ import { Image } from "astro:assets";
           Intentos restantes: <span id="intentos" class="font-bold">6</span>
         </h3>
       </div>
+
+      <!-- Botones de control -->
       <div class="flex-1 space-y-2">
         <button
           onclick="inicio()"
@@ -85,8 +89,11 @@ import { Image } from "astro:assets";
       </div>
     </section>
 
+    <!-- Se muestra el tablero -->
     <section class="mt-6 p-1 border border-gray-200 rounded-lg">
-      <div id="abcdario" class="grid grid-cols-8 gap-2 justify-center p-3">
+      <div
+        id="abcdario"
+        class="grid grid-cols-8 gap-2 justify-center p-3 user-select-none">
       </div>
     </section>
   </main>
